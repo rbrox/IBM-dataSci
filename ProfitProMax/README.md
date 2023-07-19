@@ -1,23 +1,23 @@
 
-Step 1: Data Understanding and Exploration
+# Step 1: Data Understanding and Exploration
 - Start by loading the necessary Python libraries, such as pandas, numpy, matplotlib, and seaborn.
 - Import the dataset files (`train.csv`, `test.csv`, `stores.csv`, `oil.csv`, `holidays_events.csv`) into your Jupyter Notebook.
 - Use pandas functions like `head()`, `info()`, and `describe()` to get an initial understanding of the data.
 - Perform exploratory data analysis (EDA) to analyze the distributions, relationships, and patterns in the data. Utilize visualizations with matplotlib or seaborn to gain insights into the variables and their interactions.
 
-Step 2: Data Preprocessing and Feature Engineering
+# Step 2: Data Preprocessing and Feature Engineering
 - Handle missing values, if any, by imputing or removing them based on the nature of the missingness and the impact on the analysis.
 - Process and transform the data as necessary. For example, convert date columns to datetime format, encode categorical variables, and engineer new features that could potentially enhance the forecasting model.
 - Merge or join the relevant dataset files (`train.csv`, `test.csv`, `stores.csv`, `oil.csv`, `holidays_events.csv`) based on shared keys or relationships between variables. Consider using pandas merge or join operations to combine the data appropriately.
 
-Step 3: Data Modeling and Evaluation
+# Step 3: Data Modeling and Evaluation
 - Split the processed data into training and validation sets. Typically, you can use a portion of the provided `train.csv` data as the training set and keep a subset aside for evaluation purposes.
 - Select an appropriate forecasting model based on the characteristics of the data and the specific requirements of the problem. Some potential models to consider are ARIMA, SARIMA, Prophet, or machine learning models like Random Forest, XGBoost, or LSTM.
 - Train the selected model on the training data and evaluate its performance on the validation set. Utilize relevant metrics such as Mean Absolute Error (MAE) or Root Mean Squared Error (RMSE) to assess the accuracy of the model's sales predictions.
 - Fine-tune the model by adjusting hyperparameters or exploring different feature combinations to improve its performance.
 - Once satisfied with the model's performance, make predictions on the provided `test.csv` dataset using the trained model.
 
-Step 4: Streamlit App Development (Optional)
+# Step 4: Streamlit App Development (Optional)
 - If you plan to use Streamlit for creating an interactive app to showcase your sales forecasting model, install the Streamlit library using `pip install streamlit`.
 - Create a new Python file with a `.py` extension (e.g., `app.py`) alongside your Jupyter Notebook.
 - Develop the Streamlit app in the `.py` file by importing the necessary libraries and writing the code for the user interface, data processing, and model predictions.
@@ -25,7 +25,7 @@ Step 4: Streamlit App Development (Optional)
 - Customize the app's design, layout, and user experience as desired.
 - Once the app is ready, deploy it to a hosting platform like Heroku or Streamlit Sharing to make it accessible online.
 
-Suggested Naming Conventions for Files:
+ Naming Conventions for Files:
 - `train.csv`: Historical sales data for training the model.
 - `test.csv`: Data for which you need to predict sales.
 - `stores.csv`: Metadata information about the stores.
