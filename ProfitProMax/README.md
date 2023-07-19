@@ -46,3 +46,6 @@ Suggested Naming Conventions for Files:
    - `streamlit_app.py`: The Python script that serves as the foundation for your Streamlit app development. This file should include the code for the Streamlit app's user interface, data processing, and model integration.
    - `utils.py`: A Python script where you can define utility functions or classes that are used across different files, such as helper functions for visualization, data loading, or custom model functions.
 
+## 🗈 Note:
+1. The data set can be found [here](https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data)
+2. For running the scripts as expected download and place the data-set in a folder called `data` the folder should be in the ProfiProMax directory.
