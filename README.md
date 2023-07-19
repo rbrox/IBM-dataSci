@@ -40,7 +40,7 @@ Link for the same is [here](https://www.kaggle.com/competitions/store-sales-time
 Before proceeding with the installation, make sure you have the following requirements met:
 
 - Python 3.6 or higher installed on your system.
-- Git installed (if you prefer using Git commands).
+- Git installed (if you prefer using Git commands). Get git [here](https://git-scm.com/downloads)
 - Basic knowledge of using the command line or terminal.
 
 🐙 **Step 1: Clone the Repository**
