@@ -33,3 +33,74 @@ By developing an accurate sales forecasting model, we aim to provide Favorita wi
 
 🔍 **Note**: The data-set for this project is hosted on the kaggle competition "Store Sales - Time Series Forecasting"
 Link for the same is [here](https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data)
+
+# 📝 **Installation Guide**
+
+## Prerequisites
+Before proceeding with the installation, make sure you have the following requirements met:
+
+- Python 3.6 or higher installed on your system.
+- Git installed (if you prefer using Git commands).
+- Basic knowledge of using the command line or terminal.
+
+🐙 **Step 1: Clone the Repository**
+If you haven't already, start by cloning the repository using the following command:
+
+```shell
+git clone https://github.com/rbrox/IBM-dataSci.git
+```
+
+📥 **Note**: If you don't have Git installed, you can download it separately for Windows from [here](https://git-scm.com/downloads) and for macOS using [Homebrew](https://brew.sh/) by running `brew install git` in your terminal.
+
+🖥️ **Alternative**: If you prefer using a Git GUI client, you can download one such as [GitHub Desktop](https://desktop.github.com/) or [Sourcetree](https://www.sourcetreeapp.com/), and then clone the repository through the graphical interface.
+
+## 🐍 **Step 2: Setting Up the Virtual Environment**
+To ensure a clean and isolated Python environment, it is recommended to use a virtual environment. Here's how to set up the virtual environment:
+
+### For macOS and Linux:
+1. Open a terminal and navigate to the project directory:
+   ```shell
+   cd IBM-dataSci
+   ```
+
+2. Create a new virtual environment called `venv`:
+   ```shell
+   python3 -m venv venv
+   ```
+
+3. Activate the virtual environment:
+   ```shell
+   source venv/bin/activate
+   ```
+
+### For Windows:
+1. Open a command prompt and navigate to the project directory:
+   ```shell
+   cd IBM-dataSci
+   ```
+
+2. Create a new virtual environment called `venv`:
+   ```shell
+   python -m venv venv
+   ```
+
+3. Activate the virtual environment:
+   ```shell
+   venv\Scripts\activate
+   ```
+
+✅ **Note**: If you prefer using a different virtual environment name, replace `venv` with your desired name.
+
+## 📦 **Step 3: Install Project Dependencies**
+Now that you have the virtual environment set up, you can install the project dependencies listed in the `requirements.txt` file. Run the following command:
+
+```shell
+pip install -r requirements.txt
+```
+
+🚀 **Step 4: Run the Project**
+With the virtual environment activated and dependencies installed, you are ready to run the project. Execute the appropriate commands or scripts provided within the repository to start the project or follow any specific instructions mentioned in the repository's documentation.
+
+💡 **Tip**: Make sure to consult the repository's README or documentation for any additional instructions or steps specific to the project.
+
+Congratulations! You have successfully cloned the repository, set up the virtual environment, installed the project dependencies, and are ready to run the project. Enjoy exploring and working with the data science project!
