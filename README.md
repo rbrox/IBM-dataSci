@@ -32,4 +32,4 @@ There are a few additional factors to keep in mind while tackling this project:
 By developing an accurate sales forecasting model, we aim to provide Favorita with insights and predictions that enable them to plan and optimize their operations, anticipate demand fluctuations, and improve overall business performance.
 
 🔍 **Note**: The data-set for this project is hosted on the kaggle competition "Store Sales - Time Series Forecasting"
-Link for the same is `[here](https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data)`
+Link for the same is [here](https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data)
