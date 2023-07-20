@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 
+def test():
+    print('Test')
+    
 
 def load_data(path = './data/'):
     # Path is the relative file path to the data folder, defaults to data
@@ -20,7 +23,28 @@ def load_data(path = './data/'):
     # Return the loaded data
     return train_data, test_data, stores_data, oil_data, holidays_data
 
-
+def assess_data(data):
+    """
+    Report on data health
+    """
+    df = pd.DataFrame(data)
+    
+    # columns 
+    columns = list(df.columns)
+    print(columns)
+    
+    # dtypes 
+    dtypes = dict(df.dtypes)
+    print(dtypes)
+    
+    # dtypes of object type
+    object_columns = []
+    for col in dtypes:
+        if dtypes[col] == 'dtype('O')'
+            object_columns.append(col)
+    
+    print(object_columns)
+    
 def handle_missing_values(data):
     """
     Handle missing values in the data.
@@ -61,3 +85,6 @@ def preprocess_data(data):
     data = feature_engineering(data)
     # Apply any additional preprocessing steps
     return data
+
+if __name__ == '__main__': 
+    test()
