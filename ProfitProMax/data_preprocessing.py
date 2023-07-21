@@ -26,25 +26,54 @@ def load_data(path = './data/'):
 def assess_data(data):
     """
     Report on data health
+    
+    Return df of the form 
+    
+    | Number of values | Mean | Number of Unique Values | Number of Null Values | Dtype | Remarks
+      
+    
     """
     df = pd.DataFrame(data)
+   
+    # dict to be converted into dataframe
+    assess_dict = {} 
     
     # columns 
     columns = list(df.columns)
-    print(columns)
     
-    # dtypes 
-    dtypes = dict(df.dtypes)
-    print(dtypes)
-    
-    # dtypes of object type
-    object_columns = []
-    for col in dtypes:
-        if dtypes[col] == 'dtype('O')'
-            object_columns.append(col)
-    
-    print(object_columns)
-    
+    # iterate over columns
+    for col in columns:
+        # Basic stats for numeric columns
+        if pd.api.types.is_numeric_dtype(df[col]):
+            stats = df[col].describe()
+            most_frequent_value = df[col].mode().values[0]
+            assess_dict[col] = {
+                'count': stats['count'],
+                'mean': stats['mean'],
+                'min': stats['min'],
+                'max': stats['max'],
+                'std': stats['std'],
+                'unique_count': int(df[col].nunique()),
+                'null_count': df[col].isnull().sum(),
+                'most_frequent_value': most_frequent_value,
+                'most_frequent_value_count': (df[col] == most_frequent_value).sum(),
+                'dtype': df[col].dtype
+            }
+        # Statistics for non-numeric columns
+        else:
+            most_frequent_value = df[col].mode().values[0]
+            assess_dict[col] = {
+                'count': df[col].count(),
+                'most_frequent_value': most_frequent_value,
+                'most_frequent_value_count': (df[col] == most_frequent_value).sum(),
+                'unique_count': int(df[col].nunique()),
+                'null_count': df[col].isnull().sum(),
+                'dtype': df[col].dtype
+            }
+
+    return pd.DataFrame(assess_dict)
+
+ 
 def handle_missing_values(data):
     """
     Handle missing values in the data.
