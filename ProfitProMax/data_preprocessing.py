@@ -106,7 +106,7 @@ def handle_missing_values(data):
 
 
 
-def feature_engineering(data):
+def feature_engineering(data, one_hot_encode=True, drop_originals=True, top_n=5):
     """
     Perform feature engineering transformations on the data.
     
@@ -117,7 +117,32 @@ def feature_engineering(data):
         pd.DataFrame: The DataFrame with feature engineering transformations applied.
     """
     # Implement logic for feature engineering (e.g., date transformations, categorical encoding, new feature creation)
-    pass
+    
+    df = pd.DataFrame(data)
+    columns = list(df.columns)
+    
+    for col in columns:
+        
+        if col == 'id' and drop_originals:
+            df.drop(col, axis=1, inplace=True)
+             
+        # Extracting from data-time
+        elif pd.api.types.is_datetime64_dtype(df[col]):
+            df[col + '_year'] = df[col].dt.year
+            df[col + '_month'] = df[col].dt.month
+            df[col + '_day'] = df[col].dt.day
+            if drop_originals:
+                df.drop(col, axis=1, inplace=True)
+                
+    # Categorical encoding (One-Hot Encoding)
+        elif df[col].dtype == 'object' and one_hot_encode:
+            top_categories = df[col].value_counts().nlargest(top_n).index.tolist()
+            df[col] = df[col].apply(lambda x: x if x in top_categories else 'Other')
+            df = pd.get_dummies(df, columns=[col], prefix=col)
+            
+            
+            
+    return df
 
 def preprocess_data(data):
     """
