@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 def evaluate_model(model, X, y):
     """
@@ -15,12 +15,11 @@ def evaluate_model(model, X, y):
         dict: A dictionary of evaluation metrics.
     """
     predictions = model.predict(X)
-    mae = mean_absolute_error(y, predictions)
-    rmse = np.sqrt(mean_squared_error(y, predictions))
     
     evaluation_metrics = {
-        'MAE': mae,
-        'RMSE': rmse
+        'MAE': mean_absolute_error(y, predictions),
+        'RMSE': np.sqrt(mean_squared_error(y, predictions)),
+        'r2_score': r2_score(y, predictions)
     }
     
     return evaluation_metrics
