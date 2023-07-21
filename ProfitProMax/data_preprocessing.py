@@ -106,7 +106,7 @@ def handle_missing_values(data):
 
 
 
-def feature_engineering(data):
+def feature_engineering(data, one_hot_encode=True):
     """
     Perform feature engineering transformations on the data.
     
@@ -124,12 +124,16 @@ def feature_engineering(data):
     for col in columns:
         
         # Extracting from data-time
-        if pd.api.types.is_datetime64_any_dtype(df[col]):
+        if pd.api.types.is_datetime64_dtype(df[col]):
             df[col + '_year'] = df[col].dt.year
             df[col + '_month'] = df[col].dt.month
             df[col + '_day'] = df[col].dt.day
         
-        
+    # Categorical encoding (One-Hot Encoding)
+        elif df[col].dtype == 'object' and one_hot_encode:
+            df = pd.get_dummies(df, columns=[col], prefix=col)
+            
+    return df
 
 def preprocess_data(data):
     """
