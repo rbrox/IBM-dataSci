@@ -87,9 +87,24 @@ def handle_missing_values(data):
     # Implement logic to handle missing values (e.g., imputation or removal)
     
     df = pd.DataFrame(data)
+
+    columns = list(df.columns)
+
+    for col in columns:
+        if df[col].isnull().sum() > 0:
+            #Numeric
+            if pd.api.types.is_numeric_dtype(df[col]):
+                mean = df[col].mean()
+                df[col].fillna(mean, inplace=True)
+            
+            #Non Numeric
+            else:
+                ...
+
     
     
     return df
+
 
 def feature_engineering(data):
     """
