@@ -85,7 +85,11 @@ def handle_missing_values(data):
         pd.DataFrame: The DataFrame with missing values handled.
     """
     # Implement logic to handle missing values (e.g., imputation or removal)
-    pass
+    
+    df = pd.DataFrame(data)
+    
+    
+    return df
 
 def feature_engineering(data):
     """
