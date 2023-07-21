@@ -104,9 +104,6 @@ def handle_missing_values(data):
     
     return df
 
-    
-    
-    return df
 
 
 def feature_engineering(data):
