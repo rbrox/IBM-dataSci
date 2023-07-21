@@ -87,6 +87,7 @@ def handle_missing_values(data):
     # Implement logic to handle missing values (e.g., imputation or removal)
     
     df = pd.DataFrame(data)
+
     columns = list(df.columns)
 
     for col in columns:
@@ -99,6 +100,11 @@ def handle_missing_values(data):
             #Non Numeric
             else:
                 ...
+
+    
+    
+    return df
+
 
 def feature_engineering(data):
     """
