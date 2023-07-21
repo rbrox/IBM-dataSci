@@ -117,7 +117,19 @@ def feature_engineering(data):
         pd.DataFrame: The DataFrame with feature engineering transformations applied.
     """
     # Implement logic for feature engineering (e.g., date transformations, categorical encoding, new feature creation)
-    pass
+    
+    df = pd.DataFrame(data)
+    columns = list(df.columns)
+    
+    for col in columns:
+        
+        # Extracting from data-time
+        if pd.api.types.is_datetime64_any_dtype(df[col]):
+            df[col + '_year'] = df[col].dt.year
+            df[col + '_month'] = df[col].dt.month
+            df[col + '_day'] = df[col].dt.day
+        
+        
 
 def preprocess_data(data):
     """
