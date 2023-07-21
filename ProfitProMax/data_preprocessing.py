@@ -98,7 +98,10 @@ def handle_missing_values(data):
             
             #Non Numeric
             else:
-                ...
+                most_frequent_value = df[col].mode().values[0]
+                df[col].fillna(most_frequent_value, inplace=True)
+    
+    return df
 
 def feature_engineering(data):
     """
