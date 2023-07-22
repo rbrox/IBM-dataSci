@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
 
+<<<<<<< HEAD
 def test():
     print('Test')
     
+=======
+>>>>>>> origin/aditi
 
 def load_data(path = './data/'):
     # Path is the relative file path to the data folder, defaults to data
@@ -23,6 +26,7 @@ def load_data(path = './data/'):
     # Return the loaded data
     return train_data, test_data, stores_data, oil_data, holidays_data
 
+<<<<<<< HEAD
 def assess_data(data):
     """
     Report on data health
@@ -74,6 +78,9 @@ def assess_data(data):
     return pd.DataFrame(assess_dict)
 
  
+=======
+
+>>>>>>> origin/aditi
 def handle_missing_values(data):
     """
     Handle missing values in the data.
@@ -85,6 +92,7 @@ def handle_missing_values(data):
         pd.DataFrame: The DataFrame with missing values handled.
     """
     # Implement logic to handle missing values (e.g., imputation or removal)
+<<<<<<< HEAD
     
     df = pd.DataFrame(data)
 
@@ -105,6 +113,9 @@ def handle_missing_values(data):
     return df
 
 
+=======
+    pass
+>>>>>>> origin/aditi
 
 def feature_engineering(data):
     """
@@ -133,6 +144,9 @@ def preprocess_data(data):
     data = feature_engineering(data)
     # Apply any additional preprocessing steps
     return data
+<<<<<<< HEAD
 
 if __name__ == '__main__': 
     test()
+=======
+>>>>>>> origin/aditi
