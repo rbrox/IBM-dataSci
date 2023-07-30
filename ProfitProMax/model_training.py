@@ -1,4 +1,5 @@
 import pandas as pd
+from model_evaluation import evaluate_model 
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
@@ -61,4 +62,8 @@ def train_model(data, model_type='random_forest', param_grid=None, target = 'tar
     
     model.fit(X_train, y_train)
     
-    return model
+    df = evaluate_model(model, X_val, y_val)
+    
+    print(df)
+    
+    return model, X_val, y_val
