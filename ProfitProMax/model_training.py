@@ -36,7 +36,7 @@ def hyperparameter_tuning(model, param_grid):
     grid_search.fit(X_train, y_train)
     return grid_search.best_estimator_
 
-def train_model(data, model_type='random_forest', param_grid=None):
+def train_model(data, model_type='random_forest', param_grid=None, target = 'target'):
     """
     Train the regression model on the provided data.
     
@@ -48,8 +48,10 @@ def train_model(data, model_type='random_forest', param_grid=None):
     Returns:
         model: The trained regression model.
     """
-    X = data.drop('target', axis=1)
-    y = data['target']
+    print('Training model...')
+    y = data[target].copy()
+    X = data.drop(target, axis=1)
+    print('Sucessfully droped target col')
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
     
     model = select_model(model_type=model_type)
